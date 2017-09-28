@@ -47,7 +47,7 @@ vblankwait:     ; wait for PPU to fully boot up
   STA sprite_x    ; these are stored in zeropage
   LDA #$30
   STA sprite_y
-  LDA #$01
+  LDA #$00
   STA sprite_v
   STA sprite_h
 
@@ -138,26 +138,26 @@ forever:
   BEQ move_sprite_up  ; if sprite_v is 0, skip ahead
   LDA sprite_y  ; if we got here, sprite is moving down
   CLC
-  ADC #$01
+  ADC #$02
   STA sprite_y
   JMP vertical_movement_done  ; don't move sprite up!
 move_sprite_up:
   LDA sprite_y
   SEC
-  SBC #$01
+  SBC #$02
   STA sprite_y  ; no need to jump here
 vertical_movement_done:
   LDA sprite_h
   BEQ move_sprite_left  ; if sprite_h is 0, skip ahead
   LDA sprite_x  ; if we got here, sprite is moving right
   CLC
-  ADC #$01
+  ADC #$03
   STA sprite_x
   JMP horizontal_movement_done
 move_sprite_left:
   LDA sprite_x
   SEC
-  SBC #$01
+  SBC #$03
   STA sprite_x
 horizontal_movement_done: ; all done, restore registers and return
 

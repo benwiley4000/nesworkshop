@@ -54,15 +54,15 @@ forever:
 
 .segment "RODATA"
 palettes:
-.byte $21, $00, $10, $30
-.byte $21, $01, $0f, $31
-.byte $21, $06, $16, $26
-.byte $21, $09, $19, $29
+.byte $27, $00, $10, $30
+.byte $27, $01, $0f, $31
+.byte $27, $06, $16, $26
+.byte $27, $09, $19, $29
 
-.byte $21, $00, $10, $30
-.byte $21, $01, $0f, $31
-.byte $21, $06, $16, $26
-.byte $21, $09, $19, $29
+.byte $27, $00, $10, $30
+.byte $27, $01, $0f, $31
+.byte $27, $06, $16, $26
+.byte $27, $09, $19, $29
 
 .segment "VECTORS"
 .addr nmi_handler, reset_handler, irq_handler

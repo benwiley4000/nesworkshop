@@ -79,10 +79,10 @@ palettes:
 .byte $21, $09, $19, $29
 
 sprites:
-.byte $70, $04, %00000000, $70
-.byte $70, $04, %01000000, $78
-.byte $78, $04, %10000000, $70
-.byte $78, $04, %11000000, $78
+.byte $70, $05, %00000010, $70
+.byte $70, $06, %00000010, $78
+.byte $78, $07, %00000010, $70
+.byte $78, $08, %00000010, $78
 
 .segment "VECTORS"
 .addr nmi_handler, reset_handler, irq_handler
